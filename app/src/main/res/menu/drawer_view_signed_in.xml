@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_enrolled_courses"
+            android:icon="@drawable/twotone_all_inbox_white_18"
+            android:title="@string/top1Login" />
+        <item
+            android:id="@+id/nav_courses"
+            android:icon="@drawable/twotone_explore_white_18"
+            android:title="@string/top2Login" />
+        <item
+            android:id="@+id/nav_books"
+            android:icon="@drawable/twotone_class_white_18"
+            android:title="@string/top3Login"/>
+        <item
+            android:id="@+id/nav_clarity"
+            android:icon="@drawable/twotone_access_time_white_18"
+            android:title="@string/top4Login"/>
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/twotone_settings_white_18"
+            android:title="@string/Bottom4Login"/>
+        <item
+            android:id="@+id/nav_sign_out"
+            android:icon="@drawable/twotone_access_time_white_18"
+            android:title="@string/Bottom5LogIn"/>
+
+    </group>
+</menu>

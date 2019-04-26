@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="titlesize">30sp</dimen>
+    <dimen name="titledist">32dp</dimen>
+    <dimen name="bottombuttondist">30dp</dimen>
+    <dimen name="disttextfield">16dp</dimen>
+    <dimen name="titletofirstfield">25dp</dimen>
+    <dimen name="menusize">16sp</dimen>
+    <dimen name="dashboardtitle">25sp</dimen>
+    <dimen name="courseListVerticle">200dp</dimen>
+    <dimen name="courseImagemarginhorizontal">25dp</dimen>
+    <dimen name="courseImagemarginbottom">50dp</dimen>
+    <dimen name="courseImagemarginTop">10dp</dimen>
+    <dimen name="courseTopicSize">30sp</dimen>
+</resources>

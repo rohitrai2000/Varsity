@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.teamcloudvarsity.varsity">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme">
+        <activity android:name=".DashBoardSignedIn">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SignIn" />
+        <activity android:name=".SignUp" />
+        <!--<activity android:name=".DashBoardSignedIn" /> -->
+        <activity android:name=".DashBoard" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".Course1Activity" />
+        <activity android:name=".Course11Activity" />
+        <activity android:name=".CourseVideo_1" />
+        <activity android:name=".CourseText_1" />
+        <activity android:name=".Courses"></activity>
+        <activity android:name=".ClaritySession"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_books"
+            android:icon="@drawable/twotone_class_white_18"
+            android:title="@string/top1NoLogin" />
+        <item
+            android:id="@+id/nav_courses"
+            android:icon="@drawable/twotone_explore_white_18"
+            android:title="@string/top2NoLogin" />
+        <item
+            android:id="@+id/nav_login"
+            android:icon="@drawable/twotone_settings_white_18"
+            android:title="@string/bottom3NoLogIn" />
+    </group>
+</menu>

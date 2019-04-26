@@ -1,0 +1,970 @@
+<!-- Use DrawerLayout as root container for activity -->
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <!-- Layout to contain contents of main body of screen (drawer will slide over this) -->
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="?attr/colorPrimaryDark"
+
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <android.support.v4.view.ViewPager
+                            android:id="@+id/pager"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        </android.support.v4.view.ViewPager>
+
+                        <me.relex.circleindicator.CircleIndicator
+                            android:id="@+id/indicator"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_alignParentBottom="true"
+                            app:layout_constraintBottom_toBottomOf="@+id/pager" />
+
+                    </android.support.constraint.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/popularCourses"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="@string/recommended_courses"
+                        android:textColor="@color/theme"
+                        android:textSize="@dimen/dashboardtitle" />
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Title_1_layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Course_1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/Popular_Course_1"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Course_1_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Course_1_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Title_2_layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Course_2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/Popular_course_2"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Course_2_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Course_2_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Title_3_layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Course_3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/Popular_course_3"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Course_3_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Course_3_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Title_4_layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Course_4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/Popular_course_4"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Course_4_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Course_4_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Title_5_layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Course_5"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/Popular_course_5"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Course_5_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Course_5_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Title_6_layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Course_6"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/Popular_course_6"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Course_6_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Course_6_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Title_7_Layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Course_7"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/Popular_course_7"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Course_7_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Course_7_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <TextView
+                        android:id="@+id/courseCategories"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="@string/recommended_categories"
+                        android:textColor="@color/theme"
+                        android:textSize="@dimen/dashboardtitle" />
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Category_1_layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Category_1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/Category_1"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Category_1_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Category_1_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Category_2_Layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Category_2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/Category_2"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Category_2_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Category_2_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Category_3_Layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Category_3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/Category_3"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Category_3_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Category_3_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Category_4_Layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Category_4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/Category_4"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Category_4_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Category_4_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Category_5_Layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Category_5"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/Category_5"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Category_5_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Category_5_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Category_6_Layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Category_6"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/Category_6"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Category_6_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Category_6_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Category_7_Layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Category_7"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/Category_1"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Category_7_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Category_7_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                    <TextView
+                        android:id="@+id/popularBooks"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="@string/popular_books"
+                        android:textColor="@color/theme"
+                        android:textSize="@dimen/dashboardtitle" />
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Book_1_Layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Book_1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/popular_Book_1"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Book_1_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Book_1_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Book_2_Layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Book_2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/popular_Book_2"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Book_2_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Book_2_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Book_3_Layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Book_3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/popular_Book_3"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Book_3_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Book_3_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Book_4_Layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Book_4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/popular_Book_4"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Book_4_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Book_4_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Book_5_Layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Book_5"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/popular_Book_5"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Book_5_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Book_5_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Book_6_Layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Book_6"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/popular_Book_6"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Book_6_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Book_6_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:id="@+id/Book_7_Layout"
+                                    android:layout_width="@dimen/courseListVerticle"
+                                    android:layout_height="@dimen/courseListVerticle"
+                                    tools:layout_editor_absoluteX="0dp"
+                                    tools:layout_editor_absoluteY="18dp">
+
+                                    <TextView
+                                        android:id="@+id/Book_7"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="8dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        android:layout_marginTop="8dp"
+                                        android:text="@string/popular_Book_7"
+                                        android:textColor="@color/theme"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/Book_7_Image" />
+
+                                    <ImageButton
+                                        android:id="@+id/Book_7_Image"
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginBottom="@dimen/courseImagemarginbottom"
+                                        android:layout_marginEnd="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginStart="@dimen/courseImagemarginhorizontal"
+                                        android:layout_marginTop="@dimen/courseImagemarginTop"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/spongebob" />
+
+                                </android.support.constraint.ConstraintLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+
+                    <Button
+                        android:id="@+id/bottom_Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/courseImagemarginbottom"
+                        android:text="Explore All" />
+
+                    <Button
+                        android:id="@+id/bottom_Button2"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/courseImagemarginbottom"
+                        android:paddingBottom="20dp"
+                        android:paddingTop="20dp"
+                        android:text="Explore All" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <!-- Container for contents of drawer - use NavigationView to make configuration easier -->
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/drawer_view_signed_in" >
+
+    </android.support.design.widget.NavigationView>
+</android.support.v4.widget.DrawerLayout>
